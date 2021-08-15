@@ -1,6 +1,7 @@
 #!/bin/bash
 #add fix to exercise5-server1 here
 
+sudo sed -i 's/#   StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
 KEY_PATH='/vagrant/ssh_key'
 # Check if key exist, if not generate one
 [ -f $KEY_PATH ] || ssh-keygen -q -t rsa -b 4096 -f $KEY_PATH -N ""
